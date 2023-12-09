@@ -1,0 +1,127 @@
+<ion-content [fullscreen]="true">
+  <ion-header class="ion-no-border">
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="/welcome" color="light">
+        </ion-back-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-row class="logo">
+    <ion-col>
+      <!-- <img class="new" src="assets/images/logo.png"></img> -->
+      <img src="assets/images/logo.png" alt="" />
+      <ion-label
+        ><p class="ion-text-left logoLabel">Enjoy The trip</p>
+        <p class="ion-text-left">with me</p>
+      </ion-label>
+    </ion-col>
+  </ion-row>
+</ion-content>
+
+<ion-footer>
+  <ion-list lines="full">
+    <ion-list-header class="ion-margin">
+      <ion-label> Create 
+       <p><ion-text>Account...</ion-text></p> 
+      </ion-label>
+    </ion-list-header>
+
+    <ion-item-group class="ion-margin-horizontal">
+      <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+        <div class="ion-margin-vertical">
+          <ion-item>
+            <ion-label position="stacked"
+              >User name <ion-text color="danger">*</ion-text></ion-label>
+            <ion-icon slot="start" name="person"></ion-icon>
+            <ion-input required formControlName="name" placeholder="Enter name" type="text"></ion-input>
+          </ion-item>
+          <ion-text class="error" color="danger"
+            *ngIf="!signupForm.get('name')?.valid && signupForm.get('name')?.touched"
+          >
+            <ion-text *ngIf="signupForm.get('name')?.hasError('required')"
+              >*please enter your name</ion-text
+            >
+          </ion-text>
+
+          <!-- <ion-text
+            *ngIf="signupForm.get('email')?.hasError('required') && signupForm.get('email')?.hasError('email')"
+            >Please enter proper name
+          </ion-text> -->
+
+          <!-- <ion-item>
+          <ion-label position="floating">Password <ion-text color="danger">*</ion-text></ion-label>
+          <ion-input required formControlName="password"  type="password"></ion-input>
+        </ion-item> -->
+          <!-- <ion-button shape="round" expand="block"  type="submit" [disabled]="loginForm.invalid">
+          Login
+        </ion-button> -->
+        </div>
+
+        <div class="ion-margin-vertical">
+          <ion-item>
+            <ion-label position="stacked"
+              >E-Mail <ion-text color="danger">*</ion-text></ion-label>
+            <ion-icon slot="start" name="mail"></ion-icon>
+            <ion-input required formControlName="email" placeholder="Enter email" type="email"></ion-input>
+          </ion-item>
+          <ion-text class="error" color="danger"
+            *ngIf="!signupForm.get('email')?.valid && signupForm.get('email')?.touched"
+          >
+            <ion-text *ngIf="signupForm.get('email')?.hasError('required')"
+              >*please enter your email address</ion-text
+            >
+          </ion-text>
+
+          <ion-text
+            *ngIf="signupForm.get('email')?.hasError('required') && signupForm.get('email')?.hasError('email')"
+            >Please enter proper Email
+          </ion-text>
+
+          <!-- <ion-item>
+          <ion-label position="floating">Password <ion-text color="danger">*</ion-text></ion-label>
+          <ion-input required formControlName="password"  type="password"></ion-input>
+        </ion-item> -->
+          <!-- <ion-button shape="round" expand="block"  type="submit" [disabled]="loginForm.invalid">
+          Login
+        </ion-button> -->
+        </div>
+
+        <div class="ion-margin-vertical">
+          <ion-item>
+            <ion-label position="stacked"
+              >Password <ion-text color="danger">*</ion-text></ion-label
+            >
+            <ion-icon slot="start" name="key"></ion-icon>
+            <ion-input required formControlName="password" type="password" placeholder="Enter passowrd"></ion-input>
+          </ion-item>
+          <ion-text class="error" color="danger"
+            *ngIf="!signupForm.get('password')?.valid && signupForm.get('password')?.touched"
+          >
+            <ion-text *ngIf="signupForm.get('password')?.hasError('required')"
+              >*please enter your password</ion-text
+            >
+          </ion-text>
+
+          <ion-text
+            *ngIf="signupForm.get('password')?.hasError('required') && signupForm.get('password')?.hasError('minlength')"
+            >Password must be of atleast 8 characters
+          </ion-text>
+        </div>
+        <p class="ion-text-right"><ion-text color="primary">Forget Password ?</ion-text></p>
+
+        <ion-button class="ion-margin-vertical" size="large" expand="block" shape="round" color="primary" type="submit" [disabled]="signupForm.invalid"><ion-text>Sign up</ion-text></ion-button>
+       
+      </form>
+    </ion-item-group>
+
+    <p class="ion-text-center"><strong>Or sign in With</strong></p>
+    <p class="ion-text-center">
+      <ion-icon name="logo-facebook" color="tertiary"></ion-icon>
+      <ion-icon name="logo-google" color="danger"></ion-icon>
+      <ion-icon name="logo-twitter" color="secondary"></ion-icon>
+    </p>
+  </ion-list>
+</ion-footer>
+

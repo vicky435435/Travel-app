@@ -1,0 +1,47 @@
+#screen{
+    --background: url('../../assets/images/beautiful-countryside.jpg')no-repeat center center/cover;
+    align-items: initial;
+    justify-content: left;
+    ion-row{
+        // margin: 10vh 0 0 5vh;
+        // flex-direction: column;
+        img{
+            height: 10vh;
+            width: 10vh;
+            border-radius: 10px 25px 10px 25px;
+        }
+        ion-label , p{
+          font-size: 1.2rem;
+          font-weight: bold;
+          color: white;
+        //   margin: 2vh;
+        }
+    }
+
+    // .new{
+    //     border-radius: 10px 25px 10px 25px; 
+    // }
+
+    .logoLabel{
+        margin-top: 2vh;
+    }
+
+    .logo{
+        margin: 10vh 0 0 5vh;
+    }
+    .authButton{
+        transform: translateY(40vh);
+        ion-button{
+            width: 70%;
+            margin: auto;
+            margin-bottom: 3vh;
+            ion-text{
+                font-size: 0.9em;
+                text-transform: none;
+            }
+        }
+    }
+}
+
+
+
